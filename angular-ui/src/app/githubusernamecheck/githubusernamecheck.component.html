@@ -1,0 +1,24 @@
+<html>
+  <h2 class="headtitle">GitHub User Name Check </h2>
+  <body>
+<form [formGroup]="githubusernamecheckForm" (ngSubmit)="onSubmit()" class="loginForm">
+   <br>
+   <div class="form-group">
+    <br>    
+      <label for="githubusername">Git Hub Username</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <input type="text" formControlName="githubusername" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.githubusername.errors }"
+      [(ngModel)]="githubusername" />     
+      <br> <br>     
+    <div *ngIf="httpError!=''">
+      <div class="httperrormsg">
+        {{httpError}}
+      </div>
+    </div>
+      <br>
+      <br>      
+      <button class="sendbtn">Validate</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </div> 
+    <br>
+</form>
+</body>
+</html>

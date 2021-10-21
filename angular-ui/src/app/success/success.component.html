@@ -1,0 +1,21 @@
+<html>
+  <h1 class="headtitle">Welcome</h1> 
+<body>
+<br>
+  <form [formGroup]="successForm" (ngSubmit)="onSubmit(buttonType)" id="ghusernameForm">
+  <br>
+  <br>
+  <div *ngIf="httpError!=''">
+    <div class="httperrmsg">
+      {{httpError}}
+    </div>
+  </div>
+  <div class="form-group">
+    <br>        
+      <br>      
+      <button class="githubhealthcheck" type="submit" (click)="onSubmit('githubhealthcheck')">GitHub API Health Check</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button class="githubuseridcheck" type="button" (click)="onSubmit('githubusernamecheck')">GitHub User Name Check</button>
+  </div>  
+</form>
+</body>
+</html>
